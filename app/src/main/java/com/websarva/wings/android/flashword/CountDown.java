@@ -3,9 +3,8 @@ package com.websarva.wings.android.flashword;
 import android.os.CountDownTimer;
 
 /**
- * Created by rild on 2017/08/09.
+ * Created by keita0508 on 2018/12/01.
  */
-
 public class CountDown extends CountDownTimer {
 
     //ここにリスナーを入れるための変数を宣言する

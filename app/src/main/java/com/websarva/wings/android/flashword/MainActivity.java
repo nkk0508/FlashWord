@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+/**
+ * Created by keita0508 on 2018/12/01.
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -13,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void go2Flash(View v) {
+    public void onStartButtonClick(View v) {
         Intent intent = new Intent(this, FlashActivity.class);
         startActivity(intent);
     }

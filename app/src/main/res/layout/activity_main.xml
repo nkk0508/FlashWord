@@ -21,7 +21,7 @@
         android:layout_width="240dp"
         android:layout_height="56dp"
         android:text="スタート"
-        android:onClick="go2Flash"
+        android:onClick="onStartButtonClick"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"

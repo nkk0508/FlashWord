@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+/**
+ * Created by keita0508 on 2018/12/01.
+ */
 public class ResultActivity extends AppCompatActivity {
 
     TextView mTextResult;

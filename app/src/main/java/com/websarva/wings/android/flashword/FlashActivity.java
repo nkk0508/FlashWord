@@ -12,21 +12,23 @@ import android.widget.TextView;
 import java.sql.Time;
 import java.util.Random;
 
+/**
+ * Created by keita0508 on 2018/12/01.
+ */
 public class FlashActivity extends AppCompatActivity {
     public static final String KEY_ANSWER = "answer";
     public final String TAG = "Flash";
 
     private final int QUESTION_NUMBER = 5;
-    private final int TIME_MILLIS_PER_Q = 800;
-    private final int TIME_MILLIS_TOTAL = TIME_MILLIS_PER_Q * QUESTION_NUMBER; // 4000
+    private final int TIME_MILLIS_PER_Q = 300;
+    private final int TIME_MILLIS_TOTAL = TIME_MILLIS_PER_Q * QUESTION_NUMBER;
 
     private TextView mTextViewFlash;
     private Button mButtonNext;
     private Button mButtonStart;
 
     private CountDown mCountDown;
-    private int[] mQuestions = new int[QUESTION_NUMBER];
-    private int mAnswer = 0;
+    private String[] mQuestions = new String[QUESTION_NUMBER];
     private int mCurrentNum = 0;
 
 
@@ -70,8 +72,7 @@ public class FlashActivity extends AppCompatActivity {
     private void initQuestions() {
         Random random = new Random();
         for (int i = 0; i < QUESTION_NUMBER; i++) {
-            mQuestions[i] = random.nextInt(99) + 1; // 1 ~ 99
-            mAnswer += mQuestions[i];
+            mQuestions[i] = "word";
         }
     }
 

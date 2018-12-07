@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
-        android:text="00"
+        android:text=""
         android:textSize="42sp"
         android:gravity="center"
         />
@@ -30,7 +30,7 @@
         android:id="@+id/next_button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="次へ"
+        android:text=""
         android:visibility="invisible"
         android:layout_weight="1"
         android:onClick="go2Result"/>

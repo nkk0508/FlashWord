@@ -59,15 +59,12 @@ public class FlashActivity extends AppCompatActivity {
                 initQuestions();
             }
         });
-
-
     }
 
     private void initViews() {
         mTextViewFlash = (TextView) findViewById(R.id.flash_main);
         mButtonNext = (Button) findViewById(R.id.next_button);
         mButtonStart = (Button) findViewById(R.id.next_button);
-
     }
 
     private void initQuestions() {
@@ -77,13 +74,13 @@ public class FlashActivity extends AppCompatActivity {
         }
     }
 
-    private void nextQuestion() {
-        mCurrentNum++;
-    }
-
     private void showQuestion() {
         if (mCurrentNum < QUESTION_NUMBER)
             mTextViewFlash.setText(String.valueOf(mQuestions[mCurrentNum]));
+    }
+
+    private void nextQuestion() {
+        mCurrentNum++;
     }
 
     private void finishQuestions() {

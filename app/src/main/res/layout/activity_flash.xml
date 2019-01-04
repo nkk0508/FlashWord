@@ -30,8 +30,8 @@
         android:id="@+id/next_button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text=""
+        android:text="終了"
         android:visibility="invisible"
         android:layout_weight="1"
-        android:onClick="go2Result"/>
+        android:onClick="goToResult"/>
 </LinearLayout>

@@ -29,6 +29,7 @@ public class FlashActivity extends AppCompatActivity {
 
     private CountDown mCountDown;
     private String[] mQuestions = new String[QUESTION_NUMBER];
+    private String mAnswer = "finish";
     private int mCurrentNum = 0;
 
 
@@ -90,7 +91,7 @@ public class FlashActivity extends AppCompatActivity {
         mTextViewFlash.setText("");
     }
 
-    public void go2Result(View v) {
+    public void goToResult(View v) {
         Intent intent = new Intent(this, ResultActivity.class);
         intent.putExtra(KEY_ANSWER, mAnswer);
         startActivity(intent);

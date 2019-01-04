@@ -19,14 +19,13 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
         Intent intent = getIntent();
-        int answer = intent.getIntExtra(FlashActivity.KEY_ANSWER, 0);
-
+        String answer = intent.getStringExtra(FlashActivity.KEY_ANSWER);
 
         mTextResult = (TextView) findViewById(R.id.result_text);
         mTextResult.setText(String.valueOf(answer));
     }
 
-    public void go2Main(View v) {
+    public void goToMain(View v) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

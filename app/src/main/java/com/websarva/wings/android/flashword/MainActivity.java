@@ -1,8 +1,11 @@
 package com.websarva.wings.android.flashword;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -16,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // tableの定義 - contract class
-        // users (name, score)
+        // Words (name, score)
 
         // open helper
 
@@ -27,21 +30,22 @@ public class MainActivity extends AppCompatActivity {
         // 処理 select, insert, update, delete
         Cursor c = null;
         c = db.query(
-                UserContract.Users.TABLE_NAME,
+                UserContract.Words.TABLE_NAME,
                 null, // fields
-                UserContract.Users.COL_SCORE + " > ?", // where
-                new String[] { "50" }, // where arg
+                null, // where
+                null, // where arg
                 null, // groupBy
                 null, // having
-                UserContract.Users.COL_SCORE + " desc",  // order by
-                "1"
+                null  // order by
         );
         Log.v("DB_TEST", "Count: " + c.getCount());
         while(c.moveToNext()) {
-            int id = c.getInt(c.getColumnIndex(UserContract.Users._ID));
-            String name = c.getString(c.getColumnIndex(UserContract.Users.COL_NAME));
-            int score = c.getInt(c.getColumnIndex(UserContract.Users.COL_SCORE));
-            Log.v("DB_TEST", "id: " + id + " name: " + name + " score: " + score);
+            int id = c.getInt(c.getColumnIndex(UserContract.Words._ID));
+            String english = c.getString(c.getColumnIndex(UserContract.Words.COL_ENGLISH));
+            String japanese = c.getString(c.getColumnIndex(UserContract.Words.COL_JAPANESE));
+            String part = c.getString(c.getColumnIndex(UserContract.Words.COL_PART));
+            String level = c.getString(c.getColumnIndex(UserContract.Words.COL_LEVEL));
+            Log.v("DB_TEST", "id: " + id + " english: " + english + " japanese: " + japanese + " part: " + part + " level: " + level);
         }
         c.close();
 

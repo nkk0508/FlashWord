@@ -7,16 +7,16 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Created by keita0508 on 2019/01/04.
  */
-public class WordOpenHelper extends SQLiteOpenHelper {
+public class WordsOpenHelper extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "myapp.db";
     public static final int DB_VERSION = 1;
-    public static final String CREATE_TABLE = "create table " + UserContract.Words.TABLE_NAME + " (" +
-            UserContract.Words._ID + " integer primary key autoincrement, " +
-            UserContract.Words.COL_ENGLISH + " text," +
-            UserContract.Words.COL_JAPANESE + " text," +
-            UserContract.Words.COL_PART + " text," +
-            UserContract.Words.COL_LEVEL + " text)";
+    public static final String CREATE_TABLE = "create table " + WordsContract.Words.TABLE_NAME + " (" +
+            WordsContract.Words._ID + " integer primary key autoincrement, " +
+            WordsContract.Words.COL_ENGLISH + " text," +
+            WordsContract.Words.COL_JAPANESE + " text," +
+            WordsContract.Words.COL_PART + " text," +
+            WordsContract.Words.COL_LEVEL + " text)";
     public static final String INIT_TABLE = "insert into words (english, japanese, part, level) values " +
              "('accept', 'を受け入れる', 'verb', 'h1'), " +
              "('achieve', 'を達成する', 'verb', 'h1'), " +
@@ -28,7 +28,7 @@ public class WordOpenHelper extends SQLiteOpenHelper {
              "('allow', 'を許可する', 'verb', 'h1') ";
     public static final String DROP_TABLE = "drop table if exists Words";
 
-    public WordOpenHelper(Context c) {
+    public WordsOpenHelper(Context c) {
         super(c, DB_NAME, null, DB_VERSION);
     }
 

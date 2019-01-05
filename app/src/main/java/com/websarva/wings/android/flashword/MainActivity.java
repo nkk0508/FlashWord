@@ -24,13 +24,13 @@ public class MainActivity extends AppCompatActivity {
         // open helper
 
         // open db
-        UserOpenHelper userOpenHelper = new UserOpenHelper(this);
-        SQLiteDatabase db = userOpenHelper.getWritableDatabase();
+        WordsOpenHelper wordsOpenHelper = new WordsOpenHelper(this);
+        SQLiteDatabase db = wordsOpenHelper.getWritableDatabase();
 
         // 処理 select, insert, update, delete
         Cursor c = null;
         c = db.query(
-                UserContract.Words.TABLE_NAME,
+                WordsContract.Words.TABLE_NAME,
                 null, // fields
                 null, // where
                 null, // where arg
@@ -40,11 +40,11 @@ public class MainActivity extends AppCompatActivity {
         );
         Log.v("DB_TEST", "Count: " + c.getCount());
         while(c.moveToNext()) {
-            int id = c.getInt(c.getColumnIndex(UserContract.Words._ID));
-            String english = c.getString(c.getColumnIndex(UserContract.Words.COL_ENGLISH));
-            String japanese = c.getString(c.getColumnIndex(UserContract.Words.COL_JAPANESE));
-            String part = c.getString(c.getColumnIndex(UserContract.Words.COL_PART));
-            String level = c.getString(c.getColumnIndex(UserContract.Words.COL_LEVEL));
+            int id = c.getInt(c.getColumnIndex(WordsContract.Words._ID));
+            String english = c.getString(c.getColumnIndex(WordsContract.Words.COL_ENGLISH));
+            String japanese = c.getString(c.getColumnIndex(WordsContract.Words.COL_JAPANESE));
+            String part = c.getString(c.getColumnIndex(WordsContract.Words.COL_PART));
+            String level = c.getString(c.getColumnIndex(WordsContract.Words.COL_LEVEL));
             Log.v("DB_TEST", "id: " + id + " english: " + english + " japanese: " + japanese + " part: " + part + " level: " + level);
         }
         c.close();
